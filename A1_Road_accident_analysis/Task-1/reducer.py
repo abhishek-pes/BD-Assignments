@@ -8,12 +8,14 @@ for line in sys.stdin:
 
 	line = line.strip()
 	hour,severity,ss = line.split('\t',2)
+	hour = int(hour)
 	count = 1
-
 	if current_hour == hour:
+		#print("The current hour:",current_hour)
 		current_count += count
+		#print("count for it now is : ",current_count)
 	else:
-		if current_hour:
+		if current_hour != None:
 			print("%s\t%s"%(current_hour,current_count))
 		current_hour = hour
 		current_count = count
