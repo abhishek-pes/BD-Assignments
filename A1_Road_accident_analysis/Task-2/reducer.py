@@ -9,7 +9,7 @@ total_count = 0
 for line in sys.stdin:
 	try:
 		line = line.strip()
-		state,city = line.split('\t',1)
+		state,city = line.split('|',1)
 		count = 1
 		flag = 1
 		try:

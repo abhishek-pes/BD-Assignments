@@ -18,9 +18,8 @@ def make_req(lat,lon):
 		pload = {"latitude": lat,"longitude":lon}
 		headers = {'Content-Type': 'application/json'}
 		r = requests.post('http://20.185.44.219:5000/',json=pload)
-		return r.text
-		#res = json.loads(r.text)
-		#print(res["state"].strip(),'|',res["city"].strip().replace(" ","%20"),'|',1);
+		res = json.loads(r.text)
+		print(res["state"].strip(),'|',res["city"].strip().replace(" ","%20"));
 		#print("%s\t%s"%(res["state"].strip(),res["city"].strip()))
 	except:
 		return
@@ -41,10 +40,7 @@ for line in sys.stdin:
 			continue
 		euclid_dist = euclid(float(loaded['Start_Lng']),float(loaded['Start_Lat']),float(longitude),float(latitude))
 		if(euclid_dist <= float(d)):
-			res = json.loads(make_req(float(loaded['Start_Lat']),float(loaded['Start_Lng'])))
-			if(res['request-status'] == 'success' and res):
-				if(res['state'] and ['city']):
-					print("%s\t%s"%(res['state'],res['city']))
+			make_req(float(loaded['Start_Lat']),float(loaded['Start_Lng']))
 		else:
 			continue
 	except Exception as e:
