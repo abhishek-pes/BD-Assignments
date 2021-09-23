@@ -25,8 +25,8 @@ for line in sys.stdin:
 		if(current_state != state):
 			if(total_count != 0):
 				flag = 0
-				print(current_city.strip(),current_count)
-				print(current_state.strip(),total_count)
+				print("%s %s"%(current_city,current_count))
+				print("%s %s"%(current_state,total_count))
 				total_count = 0
 			print(state.strip())
 			
@@ -34,7 +34,7 @@ for line in sys.stdin:
 			current_count += count
 		else:
 			if current_city and flag!=0:
-				print(current_city.strip(),current_count)
+				print("%s %s"%(current_city,current_count))
 			current_city = city
 			current_count = count
 			current_state = state
@@ -42,6 +42,6 @@ for line in sys.stdin:
 	except:
 		continue
 if current_city == city:
-	print(current_city.strip(),current_count)
+	print("%s %s"%(current_city,current_count))
 	if(total_count != 0):
-		print(current_state.strip(),total_count)
+		print("%s %s"%(current_state,total_count))
