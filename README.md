@@ -14,3 +14,10 @@ Page rank
 problem : https://cloud-computing-big-data.github.io/A2.html
 
 dataset files : https://drive.google.com/drive/folders/1hw1wLvMozx45cX7kil_t-ONeHj9y0h45
+
+## Assignment 3:
+Temparature analysis using spark
+
+problem : https://cloud-computing-big-data.github.io/A3.html
+
+dataset files : https://drive.google.com/drive/folders/1VjATdLE6SmVftuQvx7wBv1ASSwxzr0kz
